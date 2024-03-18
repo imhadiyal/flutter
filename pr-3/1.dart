@@ -12,9 +12,9 @@ void main() {
   List<int> myList = List.generate(5, (index) => index);
 
   myList.forEach((element) {
-    stdout.write("Enter element of ${myList.indexOf(element)} : ");
+    stdout.write("ENTER NUMBER [${myList.indexOf(element)}] : ");
     element = int.parse(stdin.readLineSync() ?? "0");
   });
-
-  print("Sum of all element in List : ${Sum(list: myList)}\n");
+  print("\n\n");
+   print("|ENTERED NUMBER SUM =   ${Sum(list: myList)}\t\t\t|");
 }
