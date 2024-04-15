@@ -1,6 +1,6 @@
 import 'dart:io';
 
-int Sum({required List<int> list}) {
+int sum({required List<int> list}) {
   int sum = 0;
   list.forEach((element) {
     sum += element;
@@ -11,10 +11,10 @@ int Sum({required List<int> list}) {
 void main() {
   List<int> myList = List.generate(5, (index) => index);
 
-  myList.forEach((element) {
-    stdout.write("ENTER NUMBER [${myList.indexOf(element)}] : ");
-    element = int.parse(stdin.readLineSync() ?? "0");
-  });
-  print("\n\n");
-   print("|ENTERED NUMBER SUM =   ${Sum(list: myList)}\t\t\t|");
+  for (int i = 0; i < myList.length; i++) {
+    stdout.write("Enter element ${i + 1} of ${myList.length}: ");
+    myList[i] = int.parse(stdin.readLineSync() ?? "0");
+  }
+
+  print("Sum of all elements in the list: ${sum(list: myList)}\n");
 }
